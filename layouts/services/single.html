@@ -1,0 +1,36 @@
+{{ define "main" }}
+<section class="split-hero page-hero">
+  <div class="split-hero-copy">
+    {{ with .Params.eyebrow }}<p class="eyebrow">{{ . }}</p>{{ end }}
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.summary }}<p class="split-hero-text">{{ . }}</p>{{ end }}
+    <div class="hero-actions">
+      <a class="btn btn-whatsapp" href="https://wa.me/{{ site.Params.whatsapp }}" target="_blank" rel="noopener">
+        {{ partial "icons.html" "whatsapp" }}<span>WhatsApp 查詢</span>
+      </a>
+    </div>
+  </div>
+  <div class="split-hero-art">{{ partial "hero-art.html" . }}</div>
+</section>
+
+<section class="section">
+  <div class="container prose">
+    {{ with .Params.items }}
+    <ul class="chip-list">
+      {{ range . }}<li>{{ . }}</li>{{ end }}
+    </ul>
+    <br>
+    {{ end }}
+    {{ .Content }}
+    <div class="cta-panel-inline">
+      <p>想查詢或預約{{ .Title }}服務？</p>
+      <a class="btn btn-whatsapp" href="https://wa.me/{{ site.Params.whatsapp }}" target="_blank" rel="noopener">
+        {{ partial "icons.html" "whatsapp" }}<span>WhatsApp 我們</span>
+      </a>
+    </div>
+    <p class="back-link"><a href="{{ .Parent.RelPermalink }}">← 返回服務項目</a></p>
+  </div>
+</section>
+
+{{ partial "hours-band.html" . }}
+{{ end }}

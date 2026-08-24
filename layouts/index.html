@@ -1,0 +1,64 @@
+{{ define "main" }}
+<section class="split-hero">
+  <div class="split-hero-copy">
+    <p class="eyebrow">Mashiro Dentistry</p>
+    <h1>真白健康的<span class="accent">牙科診療服務</span></h1>
+    <p class="split-hero-text">{{ site.Params.tagline }}。醫生耐心溝通，收費透明，全家人的口腔健康一站式照顧。</p>
+    <div class="hero-actions">
+      <a class="btn btn-whatsapp" href="https://wa.me/{{ site.Params.whatsapp }}" target="_blank" rel="noopener">
+        {{ partial "icons.html" "whatsapp" }}<span>WhatsApp 預約</span>
+      </a>
+      <a class="btn btn-outline" href="{{ (site.GetPage "/services").RelPermalink }}">瀏覽服務項目</a>
+    </div>
+  </div>
+  <div class="split-hero-art">{{ partial "hero-art.html" . }}</div>
+</section>
+
+<div class="claim-strip">
+  <div class="container claim-grid">
+    <div class="claim"><span class="claim-icon">{{ partial "icons.html" "shield" }}</span><span>專業耐心的牙科團隊</span></div>
+    <div class="claim"><span class="claim-icon">{{ partial "icons.html" "device" }}</span><span>先進精準的診療設備</span></div>
+    <div class="claim"><span class="claim-icon">{{ partial "icons.html" "heart" }}</span><span>以客為本的服務理念</span></div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head section-head-row">
+      <div>
+        <p class="eyebrow">Our Services</p>
+        <h2>我們的服務</h2>
+      </div>
+      <p class="section-note">如果您有任何牙科問題，歡迎聯繫我們。</p>
+    </div>
+    <div class="svc-grid">
+      {{ range (site.GetPage "/services").Pages.ByWeight }}
+      <a class="svc-card" href="{{ .RelPermalink }}">
+        <div class="svc-tile">{{ partial "icons.html" .Params.icon }}</div>
+        <div class="svc-body">
+          <h3>{{ .Title }}</h3>
+          <p>{{ .Params.summary }}</p>
+          <span class="svc-more">查看項目 ›</span>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="appt-band">
+  <div class="container appt-inner">
+    <div>
+      <p class="eyebrow">Appointment</p>
+      <h2>如果您有任何牙科問題，<br>歡迎聯繫我們。</h2>
+    </div>
+    <div class="appt-actions">
+      <a class="btn btn-whatsapp" href="https://wa.me/{{ site.Params.whatsapp }}" target="_blank" rel="noopener">
+        {{ partial "icons.html" "whatsapp" }}<span>{{ site.Params.whatsappDisplay }}</span>
+      </a>
+      <a class="btn btn-outline-light" href="{{ (site.GetPage "/booking").RelPermalink }}">預約就診 →</a>
+    </div>
+  </div>
+</section>
+
+{{ end }}

@@ -1,0 +1,523 @@
+/* ── Tokens (sampled from reference style: light / white / blue) ── */
+:root {
+  --white: #ffffff;
+  --ice: #eef8fc;
+  --ice-deep: #dff0fa;
+  --grey: #f3f4f4;
+  --blue: #1e97d5;      /* primary CTA */
+  --link: #177fb5;      /* nav / links / eyebrows */
+  --teal: #08afbd;      /* card titles accent */
+  --navy: #0f4f78;      /* utility bar, dark pills, appointment band */
+  --band: #126695;      /* opening-hours band */
+  --deep: #16334a;      /* headline text, number badges */
+  --footer: #102d41;
+  --ink: #33475a;
+  --muted: #5f7385;
+  --hairline: #e3edf4;
+  --whatsapp: #25d366;
+  --whatsapp-dark: #1da851;
+  --shadow: 0 10px 30px rgba(15, 79, 120, 0.10);
+  --font-body: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --font-display: "Noto Serif TC", "PingFang TC", serif;
+  --gutter: max(24px, calc((100vw - 1120px) / 2));
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--white);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--link); text-decoration: none; }
+a:focus-visible, button:focus-visible, label:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+h1, h2, h3 { font-family: var(--font-display); color: var(--deep); line-height: 1.4; font-weight: 700; }
+
+.icon { width: 1.25em; height: 1.25em; vertical-align: -0.25em; }
+
+/* Eyebrow: tiny all-caps letter-spaced English with short dash rule */
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--link);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--link); flex: none; }
+.eyebrow-center { justify-content: center; }
+
+/* ── Top utility bar ─────────────────────────────────────── */
+.topbar { background: var(--navy); color: #dceefa; font-size: 0.82rem; }
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 36px;
+}
+.topbar .icon { width: 1.05em; height: 1.05em; }
+.topbar-whatsapp { color: #fff; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; }
+.topbar-whatsapp .icon { color: var(--whatsapp); }
+.topbar-whatsapp:hover { color: var(--whatsapp); }
+
+/* ── Header ──────────────────────────────────────────────── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 72px;
+}
+
+.brand { display: flex; align-items: center; gap: 10px; color: var(--deep); }
+.brand .icon-tooth { width: 36px; height: 36px; color: var(--blue); }
+.brand-text { display: flex; flex-direction: column; line-height: 1.25; }
+.brand-zh { font-family: var(--font-display); font-weight: 700; font-size: 1.12rem; }
+.brand-en { font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+
+.header-right { display: flex; align-items: center; gap: 8px; }
+
+.site-nav ul { display: flex; align-items: center; gap: 4px; list-style: none; }
+.site-nav a {
+  display: inline-block;
+  padding: 24px 13px;
+  color: var(--ink);
+  font-weight: 500;
+  font-size: 0.95rem;
+  border-bottom: 2.5px solid transparent;
+}
+.site-nav a:hover { color: var(--link); }
+.site-nav a.active { color: var(--link); font-weight: 700; border-bottom-color: var(--link); }
+
+.header-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--navy);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 10px 20px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.header-cta:hover { background: var(--blue); color: #fff; }
+
+.nav-toggle, .nav-toggle-label { display: none; }
+
+/* ── Split hero (home + inner pages) ─────────────────────── */
+.split-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  background: var(--ice);
+  align-items: stretch;
+}
+
+.split-hero-copy {
+  padding: 72px 48px 72px var(--gutter);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.split-hero h1 {
+  font-size: clamp(2rem, 4.6vw, 3.1rem);
+  line-height: 1.3;
+}
+.split-hero h1 .accent { color: var(--blue); display: block; }
+
+.split-hero-text { color: var(--muted); margin: 18px 0 30px; max-width: 30em; }
+
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+.split-hero-art { min-height: 380px; }
+.split-hero-art svg { width: 100%; height: 100%; display: block; }
+
+.page-hero .split-hero-copy { padding-top: 56px; padding-bottom: 56px; }
+.page-hero h1 { font-size: clamp(1.9rem, 4vw, 2.6rem); }
+.page-hero .split-hero-art { min-height: 280px; }
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.98rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+
+.btn-primary { background: var(--navy); color: #fff; }
+.btn-primary:hover { background: var(--blue); color: #fff; }
+
+.btn-whatsapp { background: var(--whatsapp); color: #fff; }
+.btn-whatsapp:hover { background: var(--whatsapp-dark); color: #fff; }
+
+.btn-outline { border: 1.5px solid var(--navy); color: var(--navy); background: transparent; }
+.btn-outline:hover { background: var(--navy); color: #fff; }
+
+.btn-outline-light { border: 1.5px solid rgba(255,255,255,0.75); color: #fff; background: transparent; }
+.btn-outline-light:hover { background: #fff; color: var(--navy); }
+
+/* ── Icon claim strip ────────────────────────────────────── */
+.claim-strip { border-bottom: 1px solid var(--hairline); }
+.claim-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+.claim {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 38px 20px;
+  border-left: 1px solid var(--hairline);
+  font-weight: 700;
+  color: var(--deep);
+  font-size: 0.98rem;
+}
+.claim:first-child { border-left: none; }
+.claim-icon {
+  flex: none;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  border: 1.5px solid var(--ice-deep);
+  background: var(--ice);
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.claim-icon .icon { width: 24px; height: 24px; }
+
+/* ── Sections ────────────────────────────────────────────── */
+.section { padding: 84px 0; }
+.section-tint { background: var(--ice); }
+
+.section-head { margin-bottom: 44px; }
+.section-head h2 { font-size: clamp(1.7rem, 3.6vw, 2.3rem); }
+.section-head-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.section-note { color: var(--muted); font-size: 0.95rem; }
+.section-head-center { text-align: center; }
+
+/* ── Home service cards ──────────────────────────────────── */
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.svc-card {
+  background: var(--grey);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.svc-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+
+.svc-tile {
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(150deg, var(--ice) 0%, var(--ice-deep) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue);
+}
+.svc-tile .icon { width: 88px; height: 88px; opacity: 0.85; }
+
+.svc-body { padding: 24px 26px 30px; display: flex; flex-direction: column; gap: 10px; flex-grow: 1; }
+.svc-body h3 { color: var(--teal); font-size: 1.3rem; font-family: var(--font-body); font-weight: 700; }
+.svc-body p { color: var(--muted); font-size: 0.93rem; flex-grow: 1; }
+.svc-more {
+  align-self: flex-start;
+  border: 1.5px solid var(--link);
+  color: var(--link);
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 8px 18px;
+}
+.svc-card:hover .svc-more { background: var(--link); color: #fff; }
+
+/* ── Numbered treatment grid (services page) ─────────────── */
+.tcard-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px 26px;
+}
+
+.tcard { display: block; }
+
+.tcard-tile {
+  position: relative;
+  aspect-ratio: 1;
+  background: linear-gradient(155deg, var(--ice) 0%, var(--ice-deep) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.tcard-tile .icon {
+  width: 62%;
+  height: 62%;
+  color: var(--blue);
+  opacity: 0.28;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+.tcard:hover .tcard-tile .icon { opacity: 0.55; transform: scale(1.05); }
+
+.num-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--deep);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 5px 9px;
+  line-height: 1;
+}
+
+.tcard-title {
+  position: relative;
+  background: var(--white);
+  margin: -34px 20% 0 0;
+  padding: 16px 16px;
+  box-shadow: 0 6px 18px rgba(15, 79, 120, 0.08);
+  font-weight: 700;
+  color: var(--deep);
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+.tcard:hover .tcard-title { color: var(--link); }
+
+/* ── Appointment band (navy) ─────────────────────────────── */
+.appt-band { background: var(--navy); color: #dceefa; }
+.appt-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding: 84px 24px;
+}
+.appt-band .eyebrow { color: #9fcbe8; }
+.appt-band .eyebrow::before { background: #9fcbe8; }
+.appt-band h2 { color: #fff; font-size: clamp(1.6rem, 3.6vw, 2.4rem); line-height: 1.5; }
+.appt-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* ── Opening hours band (mid blue) ───────────────────────── */
+.hours-band { background: var(--band); color: #eaf5fc; margin-top: 72px; }
+.hours-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  flex-wrap: wrap;
+  padding: 52px 24px;
+}
+.hours-band .eyebrow { color: #bfe0f3; margin-bottom: 8px; }
+.hours-band .eyebrow::before { background: #bfe0f3; }
+.hours-band h2 { color: #fff; font-size: 1.7rem; margin-bottom: 8px; }
+.hours-band p { font-size: 0.98rem; }
+
+/* ── Prose (markdown content) ────────────────────────────── */
+.prose { max-width: 46em; margin: 0 auto; }
+.prose h2 { font-size: 1.5rem; margin: 1.7em 0 0.6em; }
+.prose h2:first-child { margin-top: 0; }
+.prose h3 { font-size: 1.15rem; margin: 1.4em 0 0.5em; }
+.prose p { margin-bottom: 1em; }
+.prose ul, .prose ol { padding-left: 1.4em; margin-bottom: 1em; }
+.prose li { margin-bottom: 0.4em; }
+.prose strong { color: var(--deep); }
+.prose table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+.prose th, .prose td { border: 1px solid var(--hairline); padding: 10px 16px; text-align: left; }
+.prose th { background: var(--ice); color: var(--deep); }
+.back-link { margin-top: 32px; }
+
+.chip-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 0;
+  padding: 0;
+}
+.chip-list li {
+  background: var(--ice);
+  color: var(--link);
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.cta-panel-inline {
+  background: var(--ice);
+  border-left: 4px solid var(--blue);
+  padding: 28px 30px;
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.cta-panel-inline p { margin: 0; font-weight: 700; color: var(--deep); }
+
+/* ── Footer ──────────────────────────────────────────────── */
+.site-footer { background: var(--footer); color: #b9d6ea; }
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 40px;
+  padding: 64px 24px 40px;
+}
+.footer-brand-row { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.footer-brand-row .icon-tooth { width: 34px; height: 34px; color: var(--blue); }
+.footer-brand { font-family: var(--font-display); font-size: 1.2rem; color: #fff; line-height: 1.3; }
+.footer-brand span { display: block; font-family: var(--font-body); font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: #7fb4d8; }
+.footer-col h3 { color: #fff; font-size: 0.98rem; margin-bottom: 14px; font-family: var(--font-body); }
+.footer-col p { font-size: 0.92rem; margin-bottom: 8px; }
+.footer-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--whatsapp);
+  font-weight: 700;
+  margin-top: 8px;
+}
+.footer-whatsapp:hover { color: #5ee78f; }
+.footer-bottom {
+  border-top: 1px solid rgba(185, 214, 234, 0.2);
+  padding: 18px 24px;
+  font-size: 0.82rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ── Floating WhatsApp button ────────────────────────────── */
+.whatsapp-float {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 200;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--whatsapp);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.whatsapp-float:hover { transform: scale(1.08); background: var(--whatsapp-dark); }
+.whatsapp-float .icon { width: 30px; height: 30px; }
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 1000px) {
+  .tcard-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 860px) {
+  .topbar-hours { display: none; }
+  .topbar-inner { justify-content: center; }
+
+  .nav-toggle-label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 10px;
+  }
+  .nav-toggle-label span {
+    width: 24px;
+    height: 2.5px;
+    background: var(--deep);
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--hairline);
+    box-shadow: var(--shadow);
+    display: none;
+  }
+  .nav-toggle:checked ~ .site-nav { display: block; }
+  .nav-toggle:checked + .nav-toggle-label span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+  .nav-toggle:checked + .nav-toggle-label span:nth-child(2) { opacity: 0; }
+  .nav-toggle:checked + .nav-toggle-label span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+  .site-nav ul { flex-direction: column; align-items: stretch; gap: 0; padding: 10px 16px 18px; }
+  .site-nav a { display: block; padding: 12px 16px; border-bottom: none; border-radius: 10px; }
+  .site-nav a.active { background: var(--ice); }
+  .header-cta { display: none; }
+
+  .split-hero { grid-template-columns: 1fr; }
+  .split-hero-copy { padding: 52px 24px; }
+  .split-hero-art { min-height: 240px; order: -1; }
+  .page-hero .split-hero-art { display: none; }
+
+  .claim-grid { grid-template-columns: 1fr; }
+  .claim { border-left: none; border-top: 1px solid var(--hairline); justify-content: flex-start; padding: 20px 24px; }
+  .claim:first-child { border-top: none; }
+
+  .section { padding: 56px 0; }
+  .tcard-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .appt-inner { padding: 56px 24px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; padding: 48px 24px 32px; }
+}
+
+@media (max-width: 480px) {
+  .tcard-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn, .svc-card, .tcard-tile .icon, .whatsapp-float, .nav-toggle-label span { transition: none; }
+  .btn:hover, .svc-card:hover, .whatsapp-float:hover { transform: none; }
+  .tcard:hover .tcard-tile .icon { transform: none; }
+}

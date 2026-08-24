@@ -1,0 +1,43 @@
+{{ define "main" }}
+<section class="split-hero page-hero">
+  <div class="split-hero-copy">
+    <p class="eyebrow">Dental Services</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="split-hero-text">{{ . }}</p>{{ end }}
+    <div class="hero-actions">
+      <a class="btn btn-whatsapp" href="https://wa.me/{{ site.Params.whatsapp }}" target="_blank" rel="noopener">
+        {{ partial "icons.html" "whatsapp" }}<span>WhatsApp 預約</span>
+      </a>
+    </div>
+  </div>
+  <div class="split-hero-art">{{ partial "hero-art.html" . }}</div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head section-head-center">
+      <p class="eyebrow eyebrow-center">What We Offer</p>
+      <h2>牙科服務</h2>
+    </div>
+    {{ $counter := newScratch }}
+    {{ $counter.Set "n" 0 }}
+    <div class="tcard-grid">
+      {{ range .Pages.ByWeight }}
+        {{ $page := . }}
+        {{ range .Params.items }}
+          {{ $counter.Add "n" 1 }}
+          <a class="tcard" href="{{ $page.RelPermalink }}">
+            <div class="tcard-tile">
+              <span class="num-badge">{{ printf "%02d" ($counter.Get "n") }}</span>
+              {{ partial "icons.html" $page.Params.icon }}
+            </div>
+            <div class="tcard-title">{{ . }}</div>
+          </a>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ partial "hours-band.html" . }}
+{{ end }}

@@ -1,0 +1,49 @@
+baseURL = 'https://mashiro-dentistry.github.io/mashiro-dentistry/'
+languageCode = 'zh-Hant-HK'
+defaultContentLanguage = 'zh-hant'
+title = '真白牙科 Mashiro Dentistry'
+enableRobotsTXT = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+  # ── Clinic identity ─────────────────────────────────────────
+  nameZh = '真白牙科醫務所'
+  nameEn = 'Mashiro Dentistry'
+  tagline = '以專業與耐心，守護您和家人的口腔健康'
+  description = '真白牙科醫務所（Mashiro Dentistry）提供專業、貼心的牙科診療服務，包括基本牙科、美容牙科、種植牙及兒童牙科。'
+
+  # ── Contact ─────────────────────────────────────────────────
+  # WhatsApp number in international format, digits only (used for wa.me link)
+  whatsapp = '85251268887'
+  whatsappDisplay = '+852 5126 8887'
+  # TODO: replace with the real clinic address / hours before launch
+  address = '香港（地址待補充）'
+  hoursWeekday = '星期一至五：上午10:00 – 晚上7:00'
+  hoursSaturday = '星期六：上午10:00 – 下午5:00'
+  hoursSunday = '星期日及公眾假期：休息'
+
+[menus]
+  [[menus.main]]
+    name = '首頁'
+    pageRef = '/'
+    weight = 10
+  [[menus.main]]
+    name = '關於我們'
+    pageRef = '/about'
+    weight = 20
+  [[menus.main]]
+    name = '服務項目'
+    pageRef = '/services'
+    weight = 30
+  [[menus.main]]
+    name = '預約就診'
+    pageRef = '/booking'
+    weight = 40
+  [[menus.main]]
+    name = '聯繫我們'
+    pageRef = '/contact'
+    weight = 50
