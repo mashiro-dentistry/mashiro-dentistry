@@ -2,7 +2,7 @@
   <div class="container footer-grid">
     <div class="footer-col">
       <div class="footer-brand-row">
-        {{ partial "icons.html" "tooth" }}
+        <img class="brand-logo" src="{{ "images/logo-light.png" | relURL }}" alt="{{ site.Params.nameZh }}標誌">
         <p class="footer-brand">{{ site.Params.nameZh }}<span>{{ site.Params.nameEn }}</span></p>
       </div>
       <p>{{ site.Params.tagline }}</p>
@@ -11,13 +11,9 @@
       </a>
     </div>
     <div class="footer-col">
-      <h3>診所資訊</h3>
-      <p>{{ site.Params.hoursWeekday }}<br>{{ site.Params.hoursSaturday }}<br>{{ site.Params.hoursSunday }}</p>
-    </div>
-    <div class="footer-col">
-      <h3>聯絡地址</h3>
+      <h3>診所地址</h3>
       <p>{{ site.Params.address }}</p>
-      <p><a href="{{ (site.GetPage "/contact").RelPermalink }}">聯繫我們 →</a></p>
+      <p><a href="{{ site.Params.mapURL }}" target="_blank" rel="noopener">{{ partial "icons.html" "pin" }} 查看地圖</a></p>
     </div>
   </div>
   <div class="container footer-bottom">

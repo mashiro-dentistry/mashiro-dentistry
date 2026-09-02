@@ -3,13 +3,15 @@ title: 種植牙
 eyebrow: Dental Implant
 weight: 30
 icon: implant
-summary: 穩固耐用的缺牙修復方案，媲美真牙。
+summary: 穩固耐用的缺牙修復方案，媲美真牙的咬合力。
 items:
   - 種植牙評估
   - 植體植入手術
   - 植牙牙冠修復
   - 活動及固定假牙
 ---
+
+![種植牙示意圖](images/illust-implant.jpg)
 
 ## 種植牙服務
 

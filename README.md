@@ -11,7 +11,6 @@ All visible text lives in markdown under `content/`:
 | `content/about.md` | 關於我們 |
 | `content/services/*.md` | 服務項目 (one file per service category) |
 | `content/booking.md` | 預約就診 |
-| `content/contact.md` | 聯繫我們 |
 
 Clinic-wide details (name, WhatsApp number, address, opening hours) are set once in `hugo.toml` under `[params]` and reused everywhere.
 

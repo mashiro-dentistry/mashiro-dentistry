@@ -8,7 +8,7 @@ description: 透過 WhatsApp 預約，方便快捷。
 
 我們採用預約制診症，減少您的等候時間。請透過 WhatsApp 與我們聯絡，職員會為您安排合適的應診時間。
 
-<p><a class="btn btn-whatsapp" href="https://wa.me/85251268887" target="_blank" rel="noopener">立即 WhatsApp 預約</a></p>
+<p><a class="btn btn-whatsapp" href="https://wa.me/85252389141" target="_blank" rel="noopener">立即 WhatsApp 預約</a></p>
 
 預約時請提供：
 

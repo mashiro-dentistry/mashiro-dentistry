@@ -3,6 +3,7 @@ languageCode = 'zh-Hant-HK'
 defaultContentLanguage = 'zh-hant'
 title = '真白牙科 Mashiro Dentistry'
 enableRobotsTXT = true
+disableKinds = ['taxonomy', 'term']
 
 [markup]
   [markup.goldmark]
@@ -11,20 +12,19 @@ enableRobotsTXT = true
 
 [params]
   # ── Clinic identity ─────────────────────────────────────────
-  nameZh = '真白牙科醫務所'
+  nameZh = '真白牙科'
   nameEn = 'Mashiro Dentistry'
   tagline = '以專業與耐心，守護您和家人的口腔健康'
-  description = '真白牙科醫務所（Mashiro Dentistry）提供專業、貼心的牙科診療服務，包括基本牙科、美容牙科、種植牙及兒童牙科。'
+  description = '真白牙科（Mashiro Dentistry）提供專業、貼心的牙科診療服務，包括基本牙科、美容牙科、種植牙及隱適美隱形牙箍。'
 
   # ── Contact ─────────────────────────────────────────────────
   # WhatsApp number in international format, digits only (used for wa.me link)
-  whatsapp = '85251268887'
-  whatsappDisplay = '+852 5126 8887'
-  # TODO: replace with the real clinic address / hours before launch
-  address = '香港（地址待補充）'
-  hoursWeekday = '星期一至五：上午10:00 – 晚上7:00'
-  hoursSaturday = '星期六：上午10:00 – 下午5:00'
-  hoursSunday = '星期日及公眾假期：休息'
+  whatsapp = '85252389141'
+  whatsappDisplay = '+852 5238 9141'
+  address = '香港西灣河筲箕灣道120號大中樓地下（西灣河地鐵站B出口對面）'
+  mapURL = 'https://share.google/BsR47kqiB9ilKjQQk'
+  hours1 = '星期一至日：9:30 – 13:00, 14:30 – 19:30'
+  hours2 = '公眾假期：休息'
 
 [menus]
   [[menus.main]]
@@ -43,7 +43,3 @@ enableRobotsTXT = true
     name = '預約就診'
     pageRef = '/booking'
     weight = 40
-  [[menus.main]]
-    name = '聯繫我們'
-    pageRef = '/contact'
-    weight = 50
