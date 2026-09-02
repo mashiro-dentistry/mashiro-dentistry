@@ -2,6 +2,7 @@
 title: 關於我們
 eyebrow: About Us
 description: 以專業、耐心與先進診療設備，守護您和家人的口腔健康。
+heroImage: images/clinic-front.jpg
 ---
 
 ## 我們的理念

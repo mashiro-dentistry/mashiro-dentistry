@@ -4,18 +4,13 @@
     {{ with .Params.eyebrow }}<p class="eyebrow">{{ . }}</p>{{ end }}
     <h1>{{ .Title }}</h1>
     {{ with .Description }}<p class="split-hero-text">{{ . }}</p>{{ end }}
-    {{ $booking := site.GetPage "/booking" }}
-    {{ if ne .RelPermalink $booking.RelPermalink }}
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="{{ $booking.RelPermalink }}">{{ partial "icons.html" "calendar" }}<span>立即預約</span></a>
-    </div>
-    {{ else }}
     <div class="hero-actions">
       <a class="btn btn-whatsapp" href="https://wa.me/{{ site.Params.whatsapp }}" target="_blank" rel="noopener">{{ partial "icons.html" "whatsapp" }}<span>WhatsApp 預約</span></a>
     </div>
-    {{ end }}
   </div>
-  <div class="split-hero-art">{{ partial "hero-art.html" . }}</div>
+  <div class="split-hero-art">
+    {{ with .Params.heroImage }}<img src="{{ . | relURL }}" alt="{{ $.Title }}">{{ else }}{{ partial "hero-art.html" . }}{{ end }}
+  </div>
 </section>
 <section class="section">
   <div class="container prose">

@@ -10,7 +10,9 @@
       </a>
     </div>
   </div>
-  <div class="split-hero-art">{{ partial "hero-art.html" . }}</div>
+  <div class="split-hero-art">
+    {{ with .Params.heroImage }}<img src="{{ . | relURL }}" alt="{{ $.Title }}">{{ else }}{{ partial "hero-art.html" . }}{{ end }}
+  </div>
 </section>
 
 <section class="section">
