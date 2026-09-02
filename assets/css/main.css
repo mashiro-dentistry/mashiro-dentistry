@@ -19,12 +19,13 @@
   --shadow: 0 10px 30px rgba(15, 79, 120, 0.10);
   --font-body: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
   --font-display: "Noto Serif TC", "PingFang TC", serif;
-  --gutter: max(24px, calc((100vw - 1120px) / 2));
+  --site-max: 1080px;
+  --gutter: 24px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; background: #dfe9f1; }
 
 body {
   font-family: var(--font-body);
@@ -32,6 +33,11 @@ body {
   background: var(--white);
   line-height: 1.8;
   -webkit-font-smoothing: antialiased;
+  /* The whole site renders inside a fixed-width centered shell so wide
+     monitors don't stretch the layout or distort hero photos. */
+  max-width: var(--site-max);
+  margin: 0 auto;
+  box-shadow: 0 0 44px rgba(13, 60, 95, 0.14);
 }
 
 img { max-width: 100%; display: block; }
@@ -462,7 +468,8 @@ h1, h2, h3 { font-family: var(--font-display); color: var(--deep); line-height: 
 /* ── Floating WhatsApp button ────────────────────────────── */
 .whatsapp-float {
   position: fixed;
-  right: 22px;
+  /* Hug the site shell's right edge on monitors wider than the shell. */
+  right: max(22px, calc((100vw - var(--site-max)) / 2 + 22px));
   bottom: 22px;
   z-index: 200;
   width: 58px;
