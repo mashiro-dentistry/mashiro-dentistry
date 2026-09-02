@@ -25,6 +25,10 @@ items:              # shown as numbered cards on the services page
   - 補牙
 ```
 
+## Asset credits
+
+The 3D dental-scan render shown on the services page's 3D口腔掃描 card was rendered from the sample upper-jaw dental cast mesh in [OrthoAid](https://github.com/amir-abdi/OrthoAid) (MIT License, © Amir H. Abdi).
+
 ## Local preview
 
 ```bash
