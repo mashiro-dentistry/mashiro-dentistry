@@ -138,6 +138,9 @@ h1, h2, h3 { font-family: var(--font-display); color: var(--deep); line-height: 
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
   background: var(--ice);
   align-items: stretch;
+  /* Fixed floor so the photo band is the same height on every page,
+     regardless of how many lines of intro text a page has. */
+  min-height: 410px;
 }
 
 .split-hero-copy {
