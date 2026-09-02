@@ -22,7 +22,7 @@ disableKinds = ['taxonomy', 'term']
   whatsapp = '85252389141'
   whatsappDisplay = '+852 5238 9141'
   address = '香港西灣河筲箕灣道120號大中樓地下（西灣河地鐵站B出口對面）'
-  mapURL = 'https://share.google/BsR47kqiB9ilKjQQk'
+  mapURL = 'https://maps.app.goo.gl/FBJD14SRPnM32ygq9'
   hours1 = '星期一至日：9:30 – 13:00, 14:30 – 19:30'
   hours2 = '公眾假期：休息'
 

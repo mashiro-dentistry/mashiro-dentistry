@@ -305,6 +305,15 @@ h1, h2, h3 { font-family: var(--font-display); color: var(--deep); line-height: 
   transition: opacity 0.18s ease, transform 0.18s ease;
 }
 .tcard:hover .tcard-tile .icon { opacity: 0.55; transform: scale(1.05); }
+.tcard-tile img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.18s ease;
+}
+.tcard:hover .tcard-tile img { transform: scale(1.04); }
 
 .num-badge {
   position: absolute;
@@ -535,5 +544,5 @@ h1, h2, h3 { font-family: var(--font-display); color: var(--deep); line-height: 
   html { scroll-behavior: auto; }
   .btn, .svc-card, .tcard-tile .icon, .whatsapp-float, .nav-toggle-label span { transition: none; }
   .btn:hover, .svc-card:hover, .whatsapp-float:hover { transform: none; }
-  .tcard:hover .tcard-tile .icon { transform: none; }
+  .tcard:hover .tcard-tile .icon, .tcard:hover .tcard-tile img { transform: none; }
 }

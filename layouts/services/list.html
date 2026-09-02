@@ -24,14 +24,20 @@
     <div class="tcard-grid">
       {{ range .Pages.ByWeight }}
         {{ $page := . }}
-        {{ range .Params.items }}
+        {{ $base := .File.BaseFileName }}
+        {{ range $i, $item := .Params.items }}
           {{ $counter.Add "n" 1 }}
+          {{ $img := printf "images/treatments/%s-%d.jpg" $base (add $i 1) }}
           <a class="tcard" href="{{ $page.RelPermalink }}">
             <div class="tcard-tile">
               <span class="num-badge">{{ printf "%02d" ($counter.Get "n") }}</span>
+              {{ if fileExists (printf "static/%s" $img) }}
+              <img src="{{ $img | relURL }}" alt="{{ $item }}" loading="lazy">
+              {{ else }}
               {{ partial "icons.html" $page.Params.icon }}
+              {{ end }}
             </div>
-            <div class="tcard-title">{{ . }}</div>
+            <div class="tcard-title">{{ $item }}</div>
           </a>
         {{ end }}
       {{ end }}
