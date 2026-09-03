@@ -176,6 +176,16 @@ h1, h2, h3 { font-family: var(--font-display); color: var(--deep); line-height: 
   object-fit: cover;
 }
 
+/* Centered hero variant (no photo): single column, everything centered */
+.hero-centered { grid-template-columns: 1fr; }
+.hero-centered .split-hero-copy {
+  align-items: center;
+  text-align: center;
+  padding: 72px 24px;
+}
+.hero-centered .split-hero-text { margin-left: auto; margin-right: auto; }
+.hero-centered .hero-actions { justify-content: center; }
+
 /* Inner-page heroes intentionally match the home hero's size so
    navigation doesn't shift the layout. */
 

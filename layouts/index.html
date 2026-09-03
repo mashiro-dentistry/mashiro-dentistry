@@ -1,7 +1,7 @@
 {{ define "main" }}
-<section class="split-hero">
+<section class="split-hero hero-centered">
   <div class="split-hero-copy">
-    <p class="eyebrow">Mashiro Dentistry</p>
+    <p class="eyebrow eyebrow-center">Mashiro Dentistry</p>
     <h1>牙科診療服務</h1>
     <p class="split-hero-text">{{ site.Params.tagline }}。醫生耐心溝通，收費透明，全家人的口腔健康一站式照顧。</p>
     <div class="hero-actions">
@@ -10,9 +10,6 @@
       </a>
       <a class="btn btn-outline" href="{{ (site.GetPage "/services").RelPermalink }}">瀏覽服務項目</a>
     </div>
-  </div>
-  <div class="split-hero-art">
-    <img src="{{ "images/clinic-front.jpg" | relURL }}" alt="真白牙科診所">
   </div>
 </section>
 
