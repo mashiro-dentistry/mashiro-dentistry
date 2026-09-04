@@ -3,6 +3,9 @@ title: 隱適美隱形牙箍
 eyebrow: Invisalign
 weight: 40
 icon: aligner
+# INTERIM asset: extracted from Align's brand-guidelines PDF for PoC only.
+# Replace with the official file from the Invisalign Asset Portal before launch.
+badge: images/invisalign-provider.png
 summary: 使用隱適美（Invisalign）隱形牙箍矯正牙齒排列，重拾自信笑容。
 items:
   - 隱適美療程評估

@@ -283,6 +283,10 @@ h1, h2, h3 { font-family: var(--font-display); color: var(--deep); line-height: 
   color: var(--blue);
 }
 .svc-tile .icon { width: 88px; height: 88px; opacity: 0.85; }
+/* Brand badges (e.g. Invisalign Provider logo): practice branding in the header
+   must stay dominant (>=2x), so badges are capped at 100px wide. */
+.svc-tile img.badge { width: 100px; height: auto; }
+.hero-badge { width: 100px; height: auto; margin-bottom: 22px; }
 
 .svc-body { padding: 24px 26px 30px; display: flex; flex-direction: column; gap: 10px; flex-grow: 1; }
 .svc-body h3 { color: var(--teal); font-size: 1.3rem; font-family: var(--font-body); font-weight: 700; }

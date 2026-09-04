@@ -4,6 +4,7 @@
     {{ with .Params.eyebrow }}<p class="eyebrow">{{ . }}</p>{{ end }}
     <h1>{{ .Title }}</h1>
     {{ with .Params.summary }}<p class="split-hero-text">{{ . }}</p>{{ end }}
+    {{ with .Params.badge }}<img class="hero-badge" src="{{ . | relURL }}" alt="{{ $.Title }}">{{ end }}
     <div class="hero-actions">
       <a class="btn btn-whatsapp" href="https://wa.me/{{ site.Params.whatsapp }}" target="_blank" rel="noopener">
         {{ partial "icons.html" "whatsapp" }}<span>WhatsApp 查詢</span>
